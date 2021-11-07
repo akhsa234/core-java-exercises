@@ -5,29 +5,34 @@ import java.util.Scanner;
 public class SimpleCalculator {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        long x = scanner.nextLong();
-        String z = scanner.nextLine();//TODO ???
-        long y = scanner.nextLong();
-        System.out.println(f(x, y));
-    }
 
-    public static double f(long x, long y) {
-        switch (z) {
-            case "subtract":
-                subtractTwoNumbers(x, y);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("enter operand1 operand2 and operator one by one");
+
+        long operand1 = scanner.nextLong();
+       // String z = scanner.nextLine();//TODO ???
+        long operand2 = scanner.nextLong();
+        char operator = scanner.next().charAt(0);
+
+        long result = 0;
+
+
+
+        switch (operator) {
+            case '-' :
+                subtractTwoNumbers(operand1, operand2);
                 break;
-            case "sum":
-                sumTwoNumbers(x, y);
+            case '+':
+                sumTwoNumbers(operand1, operand2);
                 break;
-            case "divide":
-                divideTwoNumbers(x, y);
+            case '/':
+                divideTwoNumbers(operand1, operand2);
                 break;
-            case "divide":
-                multiplyTwoNumbers(x, y);
+            case '*':
+                multiplyTwoNumbers(operand1, operand2);
                 break;
             default:
-                System.out.println("Invalid !");
+                System.out.println("illegal operand !");
         }
     }
 
